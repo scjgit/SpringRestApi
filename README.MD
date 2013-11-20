@@ -1,0 +1,1 @@
+A Simple  appliaction shows REST api service with Spring farmework

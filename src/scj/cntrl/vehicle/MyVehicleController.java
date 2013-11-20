@@ -1,5 +1,5 @@
 package scj.cntrl.vehicle;
-
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,5 +24,11 @@ public class MyVehicleController {
 		model.addAttribute("vehicleName", name);
 		model.addAttribute("vehicleValue", value);
 		return model.toString();
+	}
+	
+	@RequestMapping(value = "/number/{value}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String getName( @PathVariable String value){
+		System.err.println("name: "+value);		
+		return "{"+value+"}";
 	}
 }
