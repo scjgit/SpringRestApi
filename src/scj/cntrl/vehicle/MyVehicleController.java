@@ -38,10 +38,10 @@ public class MyVehicleController {
                 model.addAttribute("vehicleName", name);
                 model.addAttribute("vehicleValue", value);
                 try {
-                        response.setContentType("application/json");
-                        response.getOutputStream().write("myCallBack(".getBytes());
-                        response.getOutputStream().write(new ObjectMapper().writeValueAsBytes(model));
-                        response.getOutputStream().write(");".getBytes());
+            		System.err.println(request.getMethod());
+                    response.getOutputStream().write("myCallBack(".getBytes());
+                    response.getOutputStream().write(new ObjectMapper().writeValueAsBytes(model));
+                    response.getOutputStream().write(");".getBytes());
                 } catch (IOException e) {
                         e.printStackTrace();
                 }
